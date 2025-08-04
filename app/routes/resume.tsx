@@ -6,7 +6,7 @@ import ATS from "~/components/ATS";
 import Details from "~/components/Details";
 
 export const meta = () => ([
-    { title: 'Resumind | Review ' },
+    { title: 'ResumeGenie | Review ' },
     { name: 'description', content: 'Detailed overview of your resume' },
 ])
 
@@ -77,7 +77,8 @@ const Resume = () => {
                         <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
                             <Summary />
                             <Details/>
-                            <ATS/>
+                            <ATS score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
+                           
                         </div>
                     ) : (
                         <img src="/images/resume-scan-2.gif" className="w-full" />
